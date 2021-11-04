@@ -1,4 +1,4 @@
-#     guess the number game
+#     guess the number game advanced version
 #     generates new number after you guessed correctly
 
 def intro():
