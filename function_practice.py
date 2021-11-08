@@ -33,6 +33,14 @@ def even_maker(string):
 print(even_maker('Hello'))
 
 
+# NOUGAT CREAM - Write a function that returns square numbers. Use for loop and .append()
+def nougat_cream(nums):
+    num_list = []
+    for i in nums:
+        num_list.append(i*i)        #  index * index 
+    return num_list
+print(nougat_cream([1,2,3,4,5]))
+
 
 #  OLD TRAFFORD - Create a function that reverses words in a sentence
 def old_trafford(sen):
