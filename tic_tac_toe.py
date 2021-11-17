@@ -4,7 +4,7 @@ board = [' ',' ',' ',
          ' ',' ',' ',
          ' ',' ',' ']
 game_going = True
-current_player  = 'X'
+player_turn  = 'X'
 winner = None
 
 def display_board():  #  displays board
@@ -19,7 +19,7 @@ def display_board():  #  displays board
 def play_game():  #  runs the main functions
   display_board()
   while game_going:
-    handle_turn(current_player)
+    handle_turn(player_turn)
     flip_player()
     game_over()
     
@@ -90,25 +90,25 @@ def check_diagonal():
  
 
 def handle_turn(player):
-  global current_player
-  print("It's " + current_player+ "'s" + " turn")
-  position = input('Enter number between 1 and 9: ')
+  global player_turn
+  print("It's " + player_turn + "'s" + " turn")
+  location = input('Enter number between 1 and 9: ')
   
   valid = False
   while valid == False:
     
-    while position not in['1','2','3','4','5','6','7','8','9']:
-        position = input('Enter number between 1 and 9: ')
+    while location not in['1','2','3','4','5','6','7','8','9']:
+        location = input('Enter number between 1 and 9: ')
 
-    position = int(position) -1
+    location = int(location) -1
   
 
-    if board[position] == ' ':
+    if board[location] == ' ':
       valid = True
     else:
       print('You cant go here again!')
 
-  board[position] = player 
+  board[location] = player 
   print('\n')
   display_board()
 
@@ -116,18 +116,18 @@ def handle_turn(player):
 
 def flip_player():  #  switches players , starting with X 
   global game_going
-  global current_player
+  global player_turn
 
-  if current_player == 'X':
-    current_player = 'O'
+  if player_turn == 'X':
+    player_turn = 'O'
   
-  elif current_player == 'O':
-    current_player = 'X'
+  elif player_turn == 'O':
+    player_turn = 'X'
 
 
 def is_draw():
   global game_going
-  global current_player
+  global player_turn
 
   if ' ' not in board:  #     if full board then == draw
     print('No Winner!')
@@ -139,7 +139,7 @@ def is_draw():
 
 def game_over():
   global game_going
-  global current_player
+  global player_turn
   win_game()
   is_draw()
   
