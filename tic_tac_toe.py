@@ -5,7 +5,7 @@ board = [' ',' ',' ',
          ' ',' ',' ']
 game_going = True
 player_turn  = 'X'
-winner = None
+
 
 def display_board():  #  displays board
   print(board[0] + ' | ' + board[1] + ' | ' + board[2])
